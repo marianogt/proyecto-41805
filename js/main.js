@@ -74,6 +74,30 @@ else
      else console.log("No Seleccionaste Cámaras");
      alert("El Total de Productos Comprados es " + res + " por un Monto de USD: " + suma);
     }
+let formapago=0, cuotas=0;
+if(suma>0) {
+    while (formapago==0 && formapago !=1 && formapago !=2 && formapago !=3){
+        formapago = prompt("Como quiere abonar? \n 1- Efectivo \n 2- Tarjeta de Debito  \n 3- Tarjeta de Credito");
+    }
+    if (formapago== 3){
+        while (cuotas==0 && cuotas !=1 && cuotas !=2 && cuotas !=3){
+        cuotas= prompt("Encuantas cuotas? \n 1- 3 Cuotas \n 2- 6 Cuotas  \n 3- 12 Cuotas");
+        }
+        console.log("Su compra fue exitosa, en " + cuotas + " cuotas por un monto total de USD " + suma);
+        alert("Su compra fue exitosa, en " + cuotas + " cuotas por un monto total de USD " + suma);
+    }
+    else 
+        {
+         if(formapago==1) {
+            console.log("Su compra fue exitosa, en efectivo por un monto de USD " + suma);
+            alert("Su compra fue exitosa, en efectivo por un monto de USD " + suma);
+         }
+         else{
+            console.log("Su compra fue exitosa, con tarjeta de debito un monto de USD " + suma);
+            alert("Su compra fue exitosa, con tarjeta de debito un monto de USD " + suma);
+         }
+        }
+}   
 
 // for (const propiedad in ele){
 //   console.log(propiedad + ":" + ele[propiedad]);
