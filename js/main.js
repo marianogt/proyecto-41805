@@ -1,5 +1,5 @@
 
-let ingreso = prompt("Selecciona el artículo a Comprar: \n 1- Instrumento \n 2- Medidor \n 3- Barredora \n 4- Cámara \n V - Para Vaciar Carro \n F - para finalizar");
+let ingreso = prompt("Selecciona el artículo a Comprar: \n 1- Instrumento \n 2- Medidor \n 3- Barredora \n 4- Cámara \n V - Para Vaciar Carro \n F - Finaliza compra");
 let cantI=0, cantM= 0, cantB= 0, cantC = 0;
 let sumI=0, sumM=0, sumB=0, sumC=0; 
 
@@ -53,7 +53,7 @@ while ((ingreso != "F") && (ingreso != "f")) {
           console.log("opcion no valida");
           break;
       }
-      ingreso = prompt("Selecciona el artículo a Comprar: \n 1- Instrumento \n 2- Medidor \n 3- Barredora \n 4- Cámara \n V- Para Vaciar Carro \n F- para finalizar");
+      ingreso = prompt("Selecciona el artículo a Comprar: \n 1- Instrumento \n 2- Medidor \n 3- Barredora \n 4- Cámara \n V- Para Vaciar Carro \n F- Finaliza compra");
     }
 res=sumar(cantI,cantM,cantB,cantC);
 suma=sumI+sumM+sumB+sumC;
