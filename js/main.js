@@ -10,6 +10,18 @@ let sumI=0, sumM=0, sumB=0, sumC=0;
    this.precio = precio; 
  }
 
+ const productosarray = [
+    { id: 1, nombre: "Instrumental", precio: 5 },
+    { id: 2, nombre: "Medidor", precio: 8 },
+    { id: 3, nombre: "Barredora", precio: 35 },
+    { id: 4, nombre: "Camara", precio: 25 },
+    { id: 5, nombre: "Alarma", precio: 35 },
+    { id: 6, nombre: "Sensor", precio: 12 },
+    { id: 7, nombre: "Sirena", precio: 20 },
+  ];
+
+ const carrito = [];
+
  const eleI = new producto(1, 5);
  const eleM = new producto(2, 8);
  const eleB = new producto(3, 35);
@@ -50,6 +62,8 @@ while ((ingreso != "F") && (ingreso != "f")) {
         case "V","v":
             sumI=sumB=sumC=sumM=0;
             cantI=cantM=cantB=cantC=0;
+            while(carrito.length > 0){ 
+                carrito.pop()}; 
             break;
           default:
           console.log("opcion no valida");
@@ -66,15 +80,28 @@ if (res == 0){
 else
     {
     console.log("El Total de Productos Comprados es " + res + " por un Monto de USD: " + suma);
-    if(cantI > 0 ) console.log("Compraste " + cantI+ " Instrumentos por un Monto de USD: " + sumI);
+    if(cantI > 0 ){ 
+        carrito.push(["Instrumentos", cantI, sumI]); 
+        console.log("Compraste " + cantI+ " Instrumentos por un Monto de USD: " + sumI);
+    }
      else console.log("No Seleccionaste Instrumentos");
-     if(cantM > 0 ) console.log("Compraste " + cantM+ " Medidores por un Monto de USD: " + sumM);
+    if(cantM > 0 ){ 
+        carrito.push(["Medidores", cantM, sumM]); 
+        console.log("Compraste " + cantM+ " Medidores por un Monto de USD: " + sumM);
+    } 
      else console.log("No Seleccionaste Medidores");
-     if(cantB > 0 ) console.log("Compraste " + cantB+ " Barredoras por un Monto de USD: " + sumB);  
+    if(cantB > 0 ){ 
+        carrito.push(["Barredoras", cantB, sumB]); 
+        console.log("Compraste " + cantB+ " Barredoras por un Monto de USD: " + sumB);  
+    }
      else console.log("No Seleccionaste Barredoras");
-     if(cantC > 0 ) console.log("Compraste " + cantC+ " Cámaras por un Monto de USD: " + sumC);
+    if(cantC > 0 ){
+        carrito.push(["Cámaras", cantC, sumC]); 
+        console.log("Compraste " + cantC+ " Cámaras por un Monto de USD: " + sumC);
+    }
      else console.log("No Seleccionaste Cámaras");
      alert("El Total de Productos Comprados es " + res + " por un Monto de USD: " + suma);
+     console.log(carrito);
     }
 let formapago=0, cuotas=0;
 if(suma>0) {
