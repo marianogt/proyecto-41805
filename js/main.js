@@ -175,7 +175,7 @@ while ((ingreso != "F") && (ingreso != "f")) {
             else{
                 carrito.push(newelemento4); // primera compra
             }
-//                restarStock(carrito, 'Instrumento', depositoI);
+//                restarStock(carrito, 'Camara', depositoI);
             localStorage.setItem("Camara", JSON.stringify(newelemento4));  // guardo en el local storage          
             break;
         case "V","v":
@@ -205,17 +205,14 @@ else
     }
      else console.log("No Seleccionaste Instrumentos");
     if(cantM > 0 ){ 
-//        carrito.push(["Medidores", cantM, sumM]); 
         console.log("Compraste " + cantM+ " Medidores por un Monto de USD: " + sumM);
     } 
      else console.log("No Seleccionaste Medidores");
     if(cantB > 0 ){ 
-//        carrito.push(["Barredoras", cantB, sumB]); 
         console.log("Compraste " + cantB+ " Barredoras por un Monto de USD: " + sumB);  
     }
      else console.log("No Seleccionaste Barredoras");
     if(cantC > 0 ){
- //       carrito.push(["Cámaras", cantC, sumC]); 
         console.log("Compraste " + cantC+ " Cámaras por un Monto de USD: " + sumC);
     }
      else console.log("No Seleccionaste Cámaras");
@@ -237,11 +234,13 @@ if(suma>0) {
     else 
         {
          if(formapago==1) {
-            console.log("Su compra fue exitosa, en efectivo por un monto de USD " + suma);
+            document.getElementById('con').innerText= "Su compra fue exitosa, en efectivo por un monto de USD " + suma;
+            // console.log("Su compra fue exitosa, en efectivo por un monto de USD " + suma);
             alert("Su compra fue exitosa, en efectivo por un monto de USD " + suma);
          }
          else{
-            console.log("1Su compra fue exitosa, con tarjeta de debito un monto de USD " + suma);
+            document.getElementById('con').innerText= "Su compra fue exitosa, con tarjeta de debito un monto de USD " + suma;
+            // console.log("1Su compra fue exitosa, con tarjeta de debito un monto de USD " + suma);
             alert("Su compra fue exitosa, con tarjeta de debito un monto de USD " + suma);
          }
         }
