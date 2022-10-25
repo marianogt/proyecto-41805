@@ -96,11 +96,24 @@ function guardarenCarrito(elecarrito){
     return carrito.push(elecarrito);
 }
 
+document.getElementById("bor").onclick = function() {//borrado por boton y no automático para que se pueda ver el localstorage 
+	localStorage.clear();    
+}
+
+/* function cargarcarro(){
+    carrito.elemento = l.getItem("key");
+}
+
+localStorage.getItem(array.forEach(element => {
+    carrito.push(element.elemento    
+});
+);
+ */
 while ((ingreso != "F") && (ingreso != "f")) {
     switch (ingreso) {
             case "1":
                 let depositoI = parseInt(prompt("Ingresa la catidad a comprar"));
-                if ((cantI + depositoI) > productosarray[0].stock ){//Si la compra no supera el stock aviso
+                if ((cantI + depositoI) > productosarray[0].stock ){//Si la compra supera el stock aviso
                     alert("Cantidad requerida supera el stock");
                     break;
                 }  
@@ -120,7 +133,7 @@ while ((ingreso != "F") && (ingreso != "f")) {
                 break;
             case "2":
                 let depositoM = parseInt(prompt("Ingresa la catidad a comprar"));
-                if ((cantM + depositoM) > productosarray[1].stock ){//Si la compra no supera el stock aviso
+                if ((cantM + depositoM) > productosarray[1].stock ){//Si la compra supera el stock aviso
                     alert("Cantidad requerida supera el stock");
                     break;
                 }  
@@ -139,45 +152,45 @@ while ((ingreso != "F") && (ingreso != "f")) {
                 localStorage.setItem("Medidor", JSON.stringify(newelemento2));  // guardo en el local storage          
                 break;
         case "3":
-            let depositoB = parseInt(prompt("Ingresa la catidad a comprar"));
-            if ((cantB + depositoB) > productosarray[2].stock ){//Si la compra no supera el stock aviso
-                alert("Cantidad requerida supera el stock");
+                let depositoB = parseInt(prompt("Ingresa la catidad a comprar"));
+                if ((cantB + depositoB) > productosarray[2].stock ){//Si la compra supera el stock aviso
+                    alert("Cantidad requerida supera el stock");
+                    break;
+                }  
+                cantB = cantB + depositoB;
+                sumB =  eleB.precio * cantB;
+                console.log("Compraste " + cantB + " Barredora/s por un valor de: " + sumB);
+                let newelemento3 = new elecarrito("Barredora",eleB.precio,cantB);
+                if(buscarElemento(carrito, newelemento3.elemento)) // si el elemento ya se compró agrego cantidad
+                {
+                    sumarCompra(carrito, 'Barredora', depositoB);
+                }
+                else{
+                    carrito.push(newelemento3); // primera compra
+                }
+        //                restarStock(carrito, 'Barredora', depositoB);
+                localStorage.setItem("Barredora", JSON.stringify(newelemento3));  // guardo en el local storage          
                 break;
-            }  
-            cantB = cantB + depositoB;
-            sumB =  eleB.precio * cantB;
-            console.log("Compraste " + cantB + " Barredora/s por un valor de: " + sumB);
-            let newelemento3 = new elecarrito("Barredora",eleB.precio,cantB);
-            if(buscarElemento(carrito, newelemento3.elemento)) // si el elemento ya se compró agrego cantidad
-            {
-               sumarCompra(carrito, 'Barredora', depositoB);
-            }
-            else{
-                carrito.push(newelemento3); // primera compra
-            }
-//                restarStock(carrito, 'Barredora', depositoB);
-            localStorage.setItem("Barredora", JSON.stringify(newelemento3));  // guardo en el local storage          
-            break;
         case "4":
-            let depositoC = parseInt(prompt("Ingresa la catidad a comprar"));
-            if ((cantC + depositoC) > productosarray[3].stock ){//Si la compra no supera el stock aviso
-                alert("Cantidad requerida supera el stock");
+                let depositoC = parseInt(prompt("Ingresa la catidad a comprar"));
+                if ((cantC + depositoC) > productosarray[3].stock ){//Si la compra supera el stock aviso
+                    alert("Cantidad requerida supera el stock");
+                    break;
+                }  
+                cantC = cantC + depositoC;
+                sumC =  eleC.precio * cantC;
+                console.log("Compraste " + cantC + " Cámara/s por un valor de: " + sumC);
+                let newelemento4 = new elecarrito("Camara",eleC.precio,cantC);
+                if(buscarElemento(carrito, newelemento4.elemento)) // si el elemento ya se compró agrego cantidad
+                {
+                sumarCompra(carrito, 'Camara', depositoC);
+                }
+                else{
+                    carrito.push(newelemento4); // primera compra
+                }
+    //                restarStock(carrito, 'Camara', depositoI);
+                localStorage.setItem("Camara", JSON.stringify(newelemento4));  // guardo en el local storage          
                 break;
-            }  
-            cantC = cantC + depositoC;
-            sumC =  eleC.precio * cantC;
-            console.log("Compraste " + cantC + " Cámara/s por un valor de: " + sumC);
-            let newelemento4 = new elecarrito("Camara",eleC.precio,cantC);
-            if(buscarElemento(carrito, newelemento4.elemento)) // si el elemento ya se compró agrego cantidad
-            {
-               sumarCompra(carrito, 'Camara', depositoC);
-            }
-            else{
-                carrito.push(newelemento4); // primera compra
-            }
-//                restarStock(carrito, 'Camara', depositoI);
-            localStorage.setItem("Camara", JSON.stringify(newelemento4));  // guardo en el local storage          
-            break;
         case "V","v":
             sumI=sumB=sumC=sumM=0;
             cantI=cantM=cantB=cantC=0;
@@ -228,7 +241,8 @@ if(suma>0) {
         while (cuotas==0 && cuotas !=1 && cuotas !=2 && cuotas !=3){
         cuotas= prompt("Encuantas cuotas? \n 1- 3 Cuotas \n 2- 6 Cuotas  \n 3- 12 Cuotas");
         }
-        console.log("Su compra fue exitosa, en " + cuotas + " cuotas por un monto total de USD " + suma);
+        document.getElementById('con').innerText= "Su compra fue exitosa, en " + cuotas + " cuotas por un monto total de USD " + suma;
+        // console.log("Su compra fue exitosa, en " + cuotas + " cuotas por un monto total de USD " + suma);
         alert("Su compra fue exitosa, en " + cuotas + " cuotas por un monto total de USD " + suma);
     }
     else 
@@ -244,7 +258,7 @@ if(suma>0) {
             alert("Su compra fue exitosa, con tarjeta de debito un monto de USD " + suma);
          }
         }
-    localStorage.clear();    
+    // localStorage.clear();    
 }   
 
 // for (const propiedad in ele){
