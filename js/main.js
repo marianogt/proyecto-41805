@@ -115,6 +115,14 @@ while ((ingreso != "F") && (ingreso != "f")) {
                 let depositoI = parseInt(prompt("Ingresa la catidad a comprar"));
                 if ((cantI + depositoI) > productosarray[0].stock ){//Si la compra supera el stock aviso
                     alert("Cantidad requerida supera el stock");
+                    swal({
+                        title: "Cantidad requerida supera el stock",
+                        text: "Presione el boton!",
+                        icon: "warning",
+                        button: "OK SALIR!",
+                      })//,{
+                    //     timer: 3000
+                    // });                    
                     break;
                 }  
                 cantI = cantI + depositoI;
