@@ -16,51 +16,26 @@
   <title>Inicio - Carro de Compras Dylon</title>
 </head>
 <body>
-    <!-- <header></header> -->
     <main>
         <section class="main__section">
-            <h3>
-                Mi Carrito de compras
-            </h3>
-
-            <div class="div__space">
-                <label for="Instrumentos">1-Instrumentos:</label>
-                <!-- <input type="number" id="Instrumentos" name="Instrumentos" placeholder="Instrumentos" > -->
-                <br>
+            <h1 id="hor" class="centradofecha">
+                Seleccione los productos a comprar 
+            </h1>
+            <div class="principal">
+                <div class="contenedor" >
+                    <!-- contenido dinámico -->
+                </div>
+                <div class="contenedor2">
+                    <!-- contenido dinámico -->
+                </div>
             </div>
             <div class="div__space">
-                <label for="Medidores">2-Medidores:</label>
-                <!-- <input type="number" id="Medidores" name="Medidores" placeholder="Medidores" > -->
-                <br>
+                <button id="resu" class="btnfin">Finalizar compra</button><label id="tot" class="fcompra"></label>
             </div>
-            <div class="div__space">
-                <label for="Barredoras">3-Barredoras:</label>
-                <!-- <input type="number" id="Barredoras" name="Barredoras" placeholder="Barredoras" > -->
-                <br>
-            </div>
-            <div class="div__space">
-                <label for="Camaras">4-Camaras:</label>
-                <!-- <input type="number" id="Camaras" name="Camaras" placeholder="Camaras"> -->
-            </div>
-            <div class="div__space">
-                <label for="Vaciado">V-Vaciado Carrito:</label>
-                <!-- <input type="number" id="Vaciado" name="Vaciado" placeholder="Vaciado"> -->
-            </div>
-            <div class="div__space">
-                <label for="Fin">F- Finaliza compra:</label>
-                <!-- <input type="number" id="Fin" name="Fin" placeholder="Fin"> -->
-            </div>
-            <h3 id="con">
-                Sin Compras
-            </h3>
-            <div class="div__space">
-                <!-- <button type="button" onclick="borrar">Borrar carrido de la memoria</button> -->
-                <button id="bor">Borrar carrido de la memoria</button>
-            </div>
-            <!-- <button class="main__productos">Agregar Productos</button> -->
         </section>
     </main>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
+    <!-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>   -->
     <script src="./js/main.js" ></script>
 </body>
 </html>

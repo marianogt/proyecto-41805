@@ -1,0 +1,67 @@
+[
+   {
+      "id":1,
+      "nombre":"Multimetro",
+      "precio":10,
+      "img":"205.jpg",
+      "descripcion":"Multimetro digital",
+      "stock":20
+   },
+   {
+      "id":2,
+      "nombre":"Mult9208",
+      "precio":12,
+      "img":"9208.jpg",
+      "descripcion":"Multimetro medidor de Temperatura",
+      "stock":20
+   },
+   {
+      "id":3,
+      "nombre":"Barredora",
+      "precio":35,
+      "img":"imasss3.jpg",
+      "descripcion":"Robot Barredora",
+      "stock":10
+   },
+   {
+      "id":4,
+      "nombre":"Camara360",
+      "precio":25,
+      "img":"camara 350-90.jpg",
+      "descripcion":"Cámara Domo",
+      "stock":10
+   },
+   {
+      "id":5,
+      "nombre":"AlarmaFull",
+      "precio":35,
+      "img":"central.jpg",
+      "descripcion":"Central de Alarma",
+      "stock":10
+   },
+   {
+      "id":6,
+      "nombre":"Termometro",
+      "precio":12,
+      "img":"termometro.jpeg",
+      "descripcion":"Termometro -50º a +550º",
+      "stock":10
+   },
+   {
+      "id":7,
+      "nombre":"Oximetro",
+      "precio":20,
+      "img":"oximeter.jpg",
+      "descripcion":"Oximetro Portatil",
+      "stock":10
+   },
+   {
+      "id":8,
+      "nombre":"Tester Full",
+      "precio":25,
+      "img":"SNT17B.jpg",
+      "descripcion":"Tester Multiple",
+      "stock":10
+   }
+
+]
